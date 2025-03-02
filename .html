@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* خلفية الصفحة */
+            color: #333; /* لون النص */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s, color 0.3s; /* تأثير انتقالي */
+        }
+
+        /* وضع الليل (Dark Mode) */
+        body.dark-mode {
+            background-color: #121212; /* خلفية داكنة */
+            color: #ffffff; /* لون النص الأبيض */
+        }
+
+        /* تنسيق النص العلوي مع الحركة */
+        .welcome-text {
+            font-size: 5em; /* حجم كبير لكلمة Welcome */
+            text-align: center;
+            margin-top: 20px; /* مسافة من الأعلى */
+            animation: fadeInDown 2s ease-in-out; /* حركة ظهور */
+        }
+
+        /* تنسيق النص الأسفل مع الحركة */
+        .sub-text {
+            font-size: 2.5em; /* تكبير كلمة K is here */
+            text-align: center;
+            margin-top: 10px; /* مسافة بين النص العلوي والسفلي */
+            animation: fadeInUp 2s ease-in-out; /* حركة ظهور */
+        }
+
+        /* تنسيق المربعات */
+        .box {
+            width: 300px; /* عرض المربعات */
+            padding: 20px;
+            border-radius: 10px; /* زوايا مدورة */
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+            margin-top: 20px; /* مسافة بين المربعات */
+            animation: fadeInUp 2s ease-in-out; /* حركة ظهور */
+            display: block; /* لجعل الرابط يغطي المربع كامل */
+            text-decoration: none; /* إزالة الخط التحتي */
+            transition: background-color 0.3s; /* تأثير انتقالي */
+        }
+
+        /* تنسيق المربع الأزرق */
+        .blue-box {
+            background-color: #e634b9; /* لون المربع الأزرق */
+        }
+
+        /* تنسيق المربع الأسود */
+        .black-box {
+            background-color: #000; /* لون المربع الأسود */
+        }
+
+        /* تنسيق المربع الرصاصي */
+        .gray-box {
+            background-color: #000000; /* لون المربع الرصاصي */
+        }
+
+        /* تنسيق النص داخل المربعات */
+        .box span {
+            font-size: 1.5em;
+            color: white; /* لون النص الأبيض */
+        }
+
+        /* زر تبديل الوضع */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #474747;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-mode:hover {
+            background-color: #000000;
+        }
+
+        /* تعريف الحركة لكلمة Welcome */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px); /* تتحرك من الأعلى */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* تصل إلى موقعها الطبيعي */
+            }
+        }
+
+        /* تعريف الحركة لكلمة K is here والمربعات */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px); /* تتحرك من الأسفل */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* تصل إلى موقعها الطبيعي */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- زر تبديل الوضع -->
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <!-- النص العلوي مع الحركة -->
+    <div class="welcome-text">
+        Welcome
+    </div>
+
+    <!-- النص الأسفل مع الحركة -->
+    <div class="sub-text">
+        K is here
+    </div>
+
+    <!-- المربع الأزرق مع الرابط -->
+    <a href="https://www.instagram.com/1qkey/" target="_blank" class="box blue-box">
+        <span>Insta k</span>
+    </a>
+
+    <!-- المربع الأسود مع الرابط -->
+    <a href="https://www.tiktok.com/@1.key" target="_blank" class="box black-box">
+        <span>Tiktok k</span>
+    </a>
+
+    <!-- المربع الرصاصي مع الرابط -->
+    <a href="https://x.com/uor_17" target="_blank" class="box gray-box">
+        <span>X k</span>
+    </a>
+
+    <script>
+        // دالة تبديل الوضع
+        function toggleDarkMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-mode');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = '☀️ Light Mode';
+            } else {
+                button.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
